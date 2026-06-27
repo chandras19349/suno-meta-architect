@@ -1,0 +1,16 @@
+{
+  "name": "suno-meta-architect",
+  "version": "1.0.0",
+  "description": "Experimental Suno AI metatag generator for lyrics.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "openai": "latest"
+  }
+}
