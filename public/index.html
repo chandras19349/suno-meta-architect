@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suno Meta Architect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Experimental Suno Metatag Generator</p>
+        <h1>Suno Meta Architect</h1>
+        <p class="subtitle">Paste lyrics in any language. Get a Suno-ready music prompt, tagged lyrics, alternate hooks, style DNA, and internal quality scoring.</p>
+      </div>
+      <div class="badge"><span id="readinessBadge">Ready</span></div>
+    </section>
+
+    <section class="panel input-panel">
+      <label for="lyricsInput">Paste Your Lyrics</label>
+      <textarea id="lyricsInput" placeholder="Paste your raw lyrics here..."></textarea>
+
+      <div class="controls">
+        <div><label for="language">Language</label><select id="language"><option>Auto</option><option>English</option><option>Telugu</option><option>Hindi</option><option>Tamil</option><option>Arabic</option><option>Spanish</option><option>French</option><option>Korean</option><option>Japanese</option><option>Multilingual</option></select></div>
+        <div><label for="vocal">Vocal</label><select id="vocal"><option>Auto</option><option>Male</option><option>Female</option><option>Dual</option><option>Group Chant</option><option>Spoken + Sung</option></select></div>
+        <div><label for="energy">Energy</label><select id="energy"><option>Auto</option><option>Minimal</option><option>Medium</option><option>High</option><option>Chaotic</option><option>Ritualistic</option></select></div>
+        <div><label for="experimentLevel">Experiment Level</label><select id="experimentLevel"><option>Balanced</option><option>Safe</option><option>Wild</option><option>Extreme</option></select></div>
+        <div><label for="structureMode">Structure</label><select id="structureMode"><option>Auto</option><option>Groove Spiral</option><option>Fragmented Club</option><option>Cinematic Rap</option><option>Experimental Pop</option><option>Global Pulse</option><option>Broken Future-Soul</option></select></div>
+        <div><label for="outputLength">Output Length</label><select id="outputLength"><option>Standard</option><option>Short</option><option>Extended</option></select></div>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="primary">Generate Suno Version</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section id="loadingPanel" class="panel loading hidden"><div class="loader"></div><p>Building experimental architecture, metatags, hooks, and quality score...</p></section>
+
+    <section id="resultPanel" class="results hidden">
+      <div class="tabs">
+        <button class="tab active" data-tab="prompt">Music Prompt</button>
+        <button class="tab" data-tab="lyrics">Tagged Lyrics</button>
+        <button class="tab" data-tab="hooks">Hooks</button>
+        <button class="tab" data-tab="dna">Style DNA</button>
+        <button class="tab" data-tab="score">Quality Score</button>
+      </div>
+
+      <div class="panel result-card tab-content active" id="tab-prompt"><div class="result-header"><h2>Suno Music Prompt</h2><button class="copy-btn" data-copy="musicPromptOutput">Copy</button></div><pre id="musicPromptOutput"></pre></div>
+      <div class="panel result-card tab-content" id="tab-lyrics"><div class="result-header"><h2>Full Tagged Lyrics</h2><button class="copy-btn" data-copy="taggedLyricsOutput">Copy</button></div><pre id="taggedLyricsOutput"></pre></div>
+      <div class="panel result-card tab-content" id="tab-hooks"><div class="result-header"><h2>Alternate Hooks</h2><button class="copy-btn" data-copy="hooksOutput">Copy</button></div><pre id="hooksOutput"></pre></div>
+      <div class="panel result-card tab-content" id="tab-dna"><div class="result-header"><h2>Style DNA</h2><button class="copy-btn" data-copy="dnaOutput">Copy</button></div><pre id="dnaOutput"></pre></div>
+      <div class="panel result-card tab-content" id="tab-score"><div class="result-header"><h2>Internal Quality Score</h2><button class="copy-btn" data-copy="scoreOutput">Copy</button></div><div class="score-box"><div class="score-ring"><span id="overallScore">--</span><small>/100</small></div><pre id="scoreOutput"></pre></div></div>
+
+      <div class="panel quick-actions"><button id="copyAllBtn" class="primary">Copy Full Package</button><button id="regenBtn" class="secondary">Regenerate</button></div>
+    </section>
+
+    <section id="errorPanel" class="error hidden"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
